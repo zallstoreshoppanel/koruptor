@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .login {
+            text-align: center;
+        }
+
+        .login input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .login button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1e88e5;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Masukkan Password</h1>
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Masuk</button>
+    </div>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'koruptor') {
+                alert('Login berhasil! Anda akan diarahkan ke halaman utama.');
+                setTimeout(() => {
+                    window.location.href = 'main-web-koruptor-ZklKorupT0r168Nmmz1254NklosjQkdmz7h2jjsPjdnMHbwbqHahsbxnQnsjakwnsjzkakwowoweoejejnxncbsiwodnxnx12384Nmxakwodnxna.html';
+                }, 1000);
+            } else {
+                alert('Password salah! Silakan coba lagi.');
+            }
+        }
+    </script>
+</body>
+</html>

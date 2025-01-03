@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Koruptor</title>
+    <style>
+        /* Gaya umum */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Gaya untuk video loading screen */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Gaya untuk teks LOADING */
+        .loading-text {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            z-index: 20;
+        }
+
+        /* Gaya untuk halaman utama */
+        .main-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .menu h1 {
+            color: #1e88e5;
+            text-align: center;
+        }
+
+        .menu .news, .menu .gallery {
+            margin-top: 20px;
+        }
+
+        .news article, .gallery div {
+            margin-bottom: 15px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .news article h3, .gallery div h3 {
+            margin: 0;
+            color: #1e88e5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="video-container" id="loadingScreen">
+        <video autoplay playsinline id="loadingVideo">
+            <source src="videos/IMG_20250102_211213_923.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+        </video>
+        <div class="loading-text">LOADING...</div>
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="main-content" id="mainContent">
+        <div class="menu">
+            <h1>Berita Koruptor</h1>
+            <section class="news">
+                <h2>Berita</h2>
+                <article>
+                    <h3>Korupsi di Lembaga X</h3>
+                    <p>Berita tentang kasus korupsi di lembaga X yang melibatkan banyak pihak.</p>
+                </article>
+                <article>
+                    <h3>Pejabat Tertangkap Tangan</h3>
+                    <p>Seorang pejabat tinggi tertangkap tangan melakukan tindakan korupsi.</p>
+                </article>
+            </section>
+            <section class="gallery">
+                <h2>Galeri</h2>
+                <div>
+                    <h3>Foto 1</h3>
+                    <p>Gambar barang bukti dari kasus korupsi besar.</p>
+                </div>
+                <div>
+                    <h3>Foto 2</h3>
+                    <p>Foto seorang tersangka saat digiring ke pengadilan.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('loadingVideo');
+
+        // Aktifkan suara video
+        video.muted = false;
+
+        // Sembunyikan video loading setelah selesai
+        video.onended = () => {
+            document.getElementById('loadingScreen').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            document.body.style.overflow = 'auto'; // Aktifkan scroll
+        };
+    </script>
+</body>
+</html>
